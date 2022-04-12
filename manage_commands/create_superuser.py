@@ -25,8 +25,7 @@ import sys
 try:
     from getpass import getpass
     from flask_script import Command
-    # TODO During integration uncomment import line
-    #from app_server.models.model_user import User
+    from app_server.models.model_user import User
 except ImportError as ats_error_message:
     MESSAGE = '\n{0}\n{1}\n'.format(__file__, ats_error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
@@ -35,7 +34,7 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = 'Copyright 2017, Free software to use and distributed it.'
 __credits__ = ['Vladimir Roncevic']
 __license__ = 'https://bit.ly/3gJnPJY'
-__version__ = '1.2.0'
+__version__ = '1.3.0'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
@@ -81,13 +80,12 @@ class CreateSuperUser(Command):
             username = input('Insert username of superuser: ')
             superuser_email = input('Insert email of superuser: ')
         superuser_password = getpass('Insert password of superuser: ')
-        # TODO During integration uncomment lines for creating admin object
-        # admin = User(
-        #    username=username, password=superuser_password, admin=True
-        # )
-        # admin.fullname='Flask Superuser'
-        # admin.email=superuser_email
-        # self.__db.session.add(admin)
-        # self.__db.session.commit()
+        admin = User(
+            username=username, password=superuser_password, admin=True
+        )
+        admin.fullname='Flask Superuser'
+        admin.email=superuser_email
+        self.__db.session.add(admin)
+        self.__db.session.commit()
         print('Done')
         return 0

@@ -16,27 +16,28 @@
 FROM debian:10
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive \
- apt-get install -yq --no-install-recommends \
- tree \
- htop \
- wget \
- unzip \
- ca-certificates \
- openssl \
- python \
- python-pip \
- python-wheel \
- python3 \
- python3-pip \
- python3-wheel \
- libyaml-dev
+    apt-get install -yq --no-install-recommends \
+    vim \
+    nano \
+    tree \
+    htop \
+    wget \
+    curl \
+    unzip \
+    ca-certificates \
+    openssl \
+    python \
+    python-dev \
+    libyaml-dev
 
-RUN pip install --upgrade setuptools
-RUN pip3 install --upgrade setuptools
-COPY README.md /
+RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+RUN python2 get-pip.py
+RUN python2 -m pip install --upgrade setuptools
+RUN python2 -m pip install --upgrade pip
+RUN python2 -m pip install --upgrade build
+RUN rm -f get-pip.py
 COPY requirements.txt /
-RUN pip install -r requirements.txt
-RUN pip3 install -r requirements.txt
+RUN pip2 install -r requirements.txt
 RUN rm -f requirements.txt
 RUN mkdir /manage_commands/
 COPY manage_commands /manage_commands/

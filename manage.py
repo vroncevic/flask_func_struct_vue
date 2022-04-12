@@ -22,27 +22,12 @@
 import sys
 
 try:
-    import coverage
     from flask_migrate import Migrate, MigrateCommand
     from flask_script import Manager
     from manage_commands.create_database import CreateDatabase
     from manage_commands.drop_database import DropDatabase
     from manage_commands.create_data import CreateData
     from manage_commands.create_superuser import CreateSuperUser
-    from manage_commands.run_coverage import RunCoverage
-    from manage_commands.run_test import RunTest
-
-    COV = coverage.coverage(
-        branch=True,
-        include='app_server/*',
-        omit=[
-            'app_server/tests/*',
-            'app_server/configuration/testing_config.py',
-            'app_server/*/__init__.py'
-        ]
-    )
-    COV.start()
-
     from app_server import app, db
 except ImportError as ats_error_message:
     MESSAGE = '\n{0}\n{1}\n'.format(__file__, ats_error_message)
@@ -52,10 +37,18 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = 'Copyright 2017, Free software to use and distributed it.'
 __credits__ = ['Vladimir Roncevic']
 __license__ = 'https://bit.ly/3gJnPJY'
-__version__ = '1.2.0'
+__version__ = '1.3.0'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
+
+migrate = Migrate(app, db)
+manager = Manager(app)
+manager.add_command('db', MigrateCommand)
+manager.add_command('create_db', CreateDatabase(db))
+manager.add_command('drop_db', DropDatabase(db))
+manager.add_command('create_data', CreateData(db))
+manager.add_command('createsuperuser', CreateSuperUser(db))
 
 # python manage.py create_db
 # python manage.py db init
@@ -65,13 +58,4 @@ __status__ = 'Updated'
 # python manage.py runserver
 
 if __name__ == '__main__':
-    MIGRATE = Migrate(app, db)
-    MANAGER = Manager(app)
-    MANAGER.add_command('db', MigrateCommand)
-    MANAGER.add_command('create_db', CreateDatabase(db))
-    MANAGER.add_command('drop_db', DropDatabase(db))
-    MANAGER.add_command('create_data', CreateData(db))
-    MANAGER.add_command('createsuperuser', CreateSuperUser(db))
-    MANAGER.add_command('test', RunTest())
-    MANAGER.add_command('coverage', RunCoverage(COV))
-    MANAGER.run()
+    manager.run()

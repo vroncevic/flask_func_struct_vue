@@ -1,76 +1,213 @@
 <img align="right" src="https://raw.githubusercontent.com/vroncevic/flask_func_struct_vue/dev/docs/flask_func_struct_vue_logo.png" width="25%">
 
-# flask functional structure with angular
+# flask functional structure with vue
 
-**flask_func_struct_vue** is framework for creating/building flask-angular Apps.
+☯️ **flask_func_struct_vue** is framework for creating/building flask-vue Apps.
 
-Developed in **[python](https://www.python.org/)** code: **100%**.
+Developed in 🐍 **[python](https://www.python.org/)** code.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-![Python package](https://github.com/vroncevic/flask_func_struct_vue/workflows/Python%20package%20flask_func_struct_vue/badge.svg?branch=master) [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/flask_func_struct_vue.svg)](https://github.com/vroncevic/flask_func_struct_vue/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/flask_func_struct_vue.svg)](https://github.com/vroncevic/flask_func_struct_vue/graphs/contributors)
+[![flask_func_struct_vue py checker](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_py_checker.yml/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_py_checker.yml) [![flask_func_struct_vue python package](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_package.yml/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_package.yml) [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/flask_func_struct_vue.svg)](https://github.com/vroncevic/flask_func_struct_vue/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/flask_func_struct_vue.svg)](https://github.com/vroncevic/flask_func_struct_vue/graphs/contributors)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
 - [Installation](#installation)
+- [Usage](#usage)
 - [Dependencies](#dependencies)
-- [Framework structure](#framework-structure)
+- [Package structure](#package-structure)
 - [Docs](#docs)
+- [Contributing](#contributing)
 - [Copyright and Licence](#copyright-and-licence)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ### Installation
 
-Navigate to **[release page](https://github.com/vroncevic/flask_func_struct_vue/releases)** download and extract release archive.
+Navigate to **[release page](https://github.com/vroncevic/flask_func_struct_vue/releases)** download and extract release archive 📦.
 
-To install modules, locate and run setup.py with arguments
-```
+To install modules type the following
+
+```bash
 tar xvzf flask_func_struct_vue-x.y.z.tar.gz
 cd flask_func_struct_vue-x.y.z
-
+pip install -r requirements.txt
+cp manage.py /FlaskApp/
+cp -R /manage_commands/ /FlaskApp/
+cp -R /app_server/ /Flask/
 ```
 
-You can use Dockerfile to create image/container.
+Or You can use Dockerfile to create image/container 🚢.
 
-[![flask_func_struct_vue docker checker](https://github.com/vroncevic/flask_func_struct_vue/workflows/flask_func_struct_vue%20docker%20checker/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions?query=workflow%3A%22flask_func_struct_vue+docker+checker%22)
+[![flask_func_struct_vue docker checker](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_docker_checker.yml/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_docker_checker.yml)
+
+### Usage
+
+Create databse
+
+```bash
+$ python manage.py create_db
+Create database/tables
+Done
+```
+
+Init databse and prepare alembic table
+
+```bash
+$ python manage.py db init
+  Creating directory /data/dev/python/flask_func_struct_vue/github/flask_func_struct_vue/migrations ...  done
+  Creating directory /data/dev/python/flask_func_struct_vue/github/flask_func_struct_vue/migrations/versions ...  done
+  Generating /data/dev/python/flask_func_struct_vue/github/flask_func_struct_vue/migrations/env.pyc ...  done
+  Generating /data/dev/python/flask_func_struct_vue/github/flask_func_struct_vue/migrations/env.py ...  done
+  Generating /data/dev/python/flask_func_struct_vue/github/flask_func_struct_vue/migrations/alembic.ini ...  done
+  Generating /data/dev/python/flask_func_struct_vue/github/flask_func_struct_vue/migrations/README ...  done
+  Generating /data/dev/python/flask_func_struct_vue/github/flask_func_struct_vue/migrations/script.py.mako ...  done
+  Please edit configuration/connection/logging settings in
+  '/data/dev/python/flask_func_struct_vue/github/flask_func_struct_vue/migrations/alembic.ini' before proceeding.
+```
+
+Generate a migration script that makes the database match the models
+
+```bash
+$ python manage.py db migrate
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.env] No changes in schema detected.
+```
+
+Create super user
+
+```bash
+$ python manage.py createsuperuser
+Creating superuser account
+Insert username of superuser: adroot
+Insert email of superuser: adroot@test.com
+Insert password of superuser: 
+Done
+```
+
+Run application
+
+```bash
+$ python manage.py runserver
+ * Serving Flask app "app_server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 226-526-932
+```
 
 ### Dependencies
 
-These modules requires other modules and libraries (Python 2.x/3.x):
-```
-* Flask
-* Flask-Migrate
-* Flask-Script
-* coverage
-* WTForms
-* Flask-Login
-* Flask-BCrypt
-* Flask-Bootstrap
-* Flask-DebugToolbar
-* Flask-SQLAlchemy
-* Flask-Testing
-* Flask-WTF
-```
+**flask_func_struct_vue** requires other modules and libraries (Python 2.x)
 
-### Framework structure
-
-**flask_func_struct_vue** is based on OOP:
-
-Framework structure:
+```bash
+alembic                           1.6.5
+Flask                             1.1.4
+Flask-Bcrypt                      1.0.1
+Flask-Bootstrap                   3.3.7.1
+Flask-Cors                        3.0.10
+Flask-DebugToolbar                0.13.1
+Flask-Login                       0.5.0
+Flask-Mail                        0.9.1
+Flask-Migrate                     2.6.0
+Flask-Script                      2.0.6
+Flask-SQLAlchemy                  2.5.1
+Flask-Testing                     0.8.1
+Flask-WTF                         0.14.3
+SQLAlchemy                        1.4.27
+Werkzeug                          1.0.1
+WTForms                           2.3.3
 ```
 
+### Package structure
+
+🧰 Expected framework structure
+
+```bash
+app_server/
+├── configuration/
+│   ├── database/
+│   │   ├── development_config.py
+│   │   ├── __init__.py
+│   │   ├── production_config.py
+│   │   └── test_config.py
+│   ├── development_config.py
+│   ├── __init__.py
+│   ├── mail/
+│   │   ├── development_config.py
+│   │   ├── __init__.py
+│   │   ├── production_config.py
+│   │   └── test_config.py
+│   ├── production_config.py
+│   └── test_config.py
+├── forms/
+│   ├── base/
+│   │   ├── contact.py
+│   │   └── __init__.py
+│   ├── __init__.py
+│   └── user/
+│       ├── edit.py
+│       ├── __init__.py
+│       ├── login.py
+│       └── register.py
+├── __init__.py
+├── models/
+│   ├── __init__.py
+│   └── model_user.py
+├── static/
+│   ├── base.css
+│   └── favicon.ico
+├── templates/
+│   ├── base/
+│   │   ├── about.html
+│   │   ├── contact.html
+│   │   └── home.html
+│   ├── _base.html
+│   ├── errors/
+│   │   ├── 401.html
+│   │   ├── 403.html
+│   │   ├── 404.html
+│   │   └── 500.html
+│   ├── footer.html
+│   ├── header.html
+│   └── user/
+│       ├── administration.html
+│       ├── edit.html
+│       ├── login.html
+│       ├── members.html
+│       └── register.html
+└── views/
+    ├── base/
+    │   ├── about.py
+    │   ├── contact.py
+    │   ├── home.py
+    │   └── __init__.py
+    ├── __init__.py
+    └── user/
+        ├── administration.py
+        ├── edit.py
+        ├── __init__.py
+        ├── login.py
+        ├── logout.py
+        ├── members.py
+        └── register.py
 ```
 
 ### Docs
 
-[![Documentation Status](https://readthedocs.org/projects/flask_func_struct_vue/badge/?version=latest)](https://flask_func_struct_vue.readthedocs.io/projects/flask_func_struct_vue/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/flask-func-struct-vue/badge/?version=latest)](https://flask-func-struct-vue.readthedocs.io/en/latest/?badge=latest) [![pages-build-deployment](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/pages/pages-build-deployment)
 
-More documentation and info at:
+📗 More documentation and info at
+
 * [flask_func_struct_vue.readthedocs.io](https://flask_func_struct_vue.readthedocs.io/en/latest/)
 * [www.python.org](https://www.python.org/)
 
