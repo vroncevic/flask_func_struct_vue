@@ -2,7 +2,7 @@
 
 '''
  Module
-     run_test.py
+     test_config.py
  Copyright
      Copyright (C) 2017 Vladimir Roncevic <elektron.ronca@gmail.com>
      flask_func_struct_vue is free software: you can redistribute it
@@ -16,62 +16,47 @@
      You should have received a copy of the GNU General Public License along
      with this program. If not, see <http://www.gnu.org/licenses/>.
  Info
-     Define class RunTest with attribute(s) and method(s).
-     Create initial data and insert to database.
+     Define class TestConfig with attribute(s) and method(s).
+     Define test configuration
 '''
 
 import sys
 
 try:
-    import unittest
-    from flask_script import Command
-except ImportError as ats_error_message:
-    MESSAGE = '\n{0}\n{1}\n'.format(__file__, ats_error_message)
+    from app_server.configuration import BaseConfig
+except ImportError as error_message:
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
 __author__ = 'Vladimir Roncevic'
 __copyright__ = 'Copyright 2017, Free software to use and distributed it.'
 __credits__ = ['Vladimir Roncevic']
-__license__ = 'https://bit.ly/3gJnPJY'
-__version__ = '1.2.0'
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.3.0'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
 
 
-class RunTest(Command):
+class TestConfig(BaseConfig):
     '''
-        Define class RunTest with attribute(s) and method(s).
-        Run tests.
+        Define class TestConfig with attribute(s) and method(s).
+        Define test configuration.
         It defines:
 
             :attributes:
-                | None.
+                | DEBUG - Enable/Disable debug option
+                | WTF_CSRF_ENABLED - Secure forms
+                | DEBUG_TB_ENABLED - Flask debug toolbar's
+                | DEBUG_TB_INTERCEPT_REDIRECTS - Should intercept redirects?
+                | BCRYPT_LOG_ROUNDS - for bcrypt hashing utilities
             :methods:
-                | __init__ - initial constructor.
-                | run - run tests.
+                | None
     '''
 
-    def __init__(self):
-        '''
-            Initial constructor.
-
-            :exceptions: None
-        '''
-        super(RunTest, self).__init__()
-
-    def run(self):
-        '''
-            Run testes.
-
-            :return: 0 for success else 1.
-            :rtype: <int>
-            :exceptions: None
-        '''
-        tests = unittest.TestLoader().discover(
-            'app_server/tests', pattern='test*.py'
-        )
-        result = unittest.TextTestRunner(verbosity=2).run(tests)
-        if result.wasSuccessful():
-            return 0
-        return 1
+    DEBUG = True
+    WTF_CSRF_ENABLED = False
+    DEBUG_TB_ENABLED = True
+    DEBUG_TB_INTERCEPT_REDIRECTS = True
+    BCRYPT_LOG_ROUNDS = 12
+    BCRYPT_HASH_PREFIX = '2b'
