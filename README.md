@@ -209,6 +209,7 @@ app_server/
 
 * [flask_func_struct_vue.readthedocs.io](https://flask_func_struct_vue.readthedocs.io/en/latest/)
 * [www.python.org](https://www.python.org/)
+* [vuejs.org](https://vuejs.org/)
 
 ### Copyright and Licence
 
