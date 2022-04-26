@@ -1,29 +1,29 @@
 flask functional structure with vue
 ------------------------------------
 
-**flask_func_struct_vue** is framework for creating/building flask-vue Apps.
+☯️ **flask_func_struct_vue** is framework for creating/building flask-vue Apps.
 
-Developed in `python <https://www.python.org/>`_ code.
+Developed in 🐍 `python <https://www.python.org/>`_ code.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-|Python checker| |Python package| |GitHub issues| |Documentation Status| |GitHub contributors|
+|python checker| |python package| |github issues| |documentation status| |github contributors|
 
-.. |Python checker| image:: https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_py_checker.yml/badge.svg
-   :target: https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_py_checker.yml
+.. |python checker| image:: https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_python_checker?style=flat&label=flask_func_struct_vue%20python%20checker
+   :target: https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_python_checker
 
-.. |Python package| image:: https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_package.yml/badge.svg
-   :target: https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_package.yml
+.. |python package| image:: https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_package_checker?style=flat&label=flask_func_struct_vue%20package%20checker
+   :target: https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_package_checker
 
-.. |GitHub issues| image:: https://img.shields.io/github/issues/vroncevic/flask_func_struct_vue.svg
+.. |github issues| image:: https://img.shields.io/github/issues/vroncevic/flask_func_struct_vue.svg
    :target: https://github.com/vroncevic/flask_func_struct_vue/issues
 
-.. |GitHub contributors| image:: https://img.shields.io/github/contributors/vroncevic/flask_func_struct_vue.svg
+.. |github contributors| image:: https://img.shields.io/github/contributors/vroncevic/flask_func_struct_vue.svg
    :target: https://github.com/vroncevic/flask_func_struct_vue/graphs/contributors
 
-.. |Documentation Status| image:: https://readthedocs.org/projects/flask-func-struct-vue/badge/?version=latest
+.. |documentation status| image:: https://readthedocs.org/projects/flask-func-struct-vue/badge/?version=latest
    :target: https://flask-func-struct-vue.readthedocs.io/en/latest/?badge=latest
 
 .. toctree::
@@ -35,11 +35,11 @@ other information that should be provided before the modules are installed.
 Installation
 -------------
 
-Navigate to release `page`_ download and extract release archive.
+Navigate to release `page`_ download and extract release archive 📦.
 
 .. _page: https://github.com/vroncevic/flask_func_struct_vue/releases
 
-To install this set of modules type the following
+To install **flask_func_struct_vue** 📦 type the following
 
 .. code-block:: bash
 
@@ -50,12 +50,12 @@ To install this set of modules type the following
     cp -R /manage_commands/ /FlaskApp/
     cp -R /app_server/ /Flask/
 
-You can use Docker to create image/container.
+You can use Docker to create image/container 🚢.
 
-|GitHub docker checker|
+|github docker checker|
 
-.. |GitHub docker checker| image:: https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_docker_checker.yml/badge.svg
-   :target: https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_docker_checker.yml
+.. |github docker checker| image:: https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_docker_checker?style=flat&label=flask_func_struct_vue%20docker%20checker
+   :target: https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_docker_checker
 
 Dependencies
 -------------
@@ -86,7 +86,7 @@ Library structure
 
 **flask_func_struct_vue** is based on OOP
 
-Framework structure
+🧰 Framework structure
 
 .. code-block:: bash
 
@@ -169,12 +169,12 @@ Framework structure
 Copyright and licence
 ----------------------
 
-|License: GPL v3| |License: Apache 2.0|
+|license: gpl v3| |license: apache 2.0|
 
-.. |License: GPL v3| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
+.. |license: gpl v3| image:: https://img.shields.io/badge/license-gplv3-blue.svg
    :target: https://www.gnu.org/licenses/gpl-3.0
 
-.. |License: Apache 2.0| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
+.. |license: apache 2.0| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
    :target: https://opensource.org/licenses/Apache-2.0
 
 Copyright (C) 2017 by `vroncevic.github.io/flask_func_struct_vue <https://vroncevic.github.io/flask_func_struct_vue>`_
@@ -183,16 +183,16 @@ Copyright (C) 2017 by `vroncevic.github.io/flask_func_struct_vue <https://vronce
 it under the same terms as Python itself, either Python version 2.x or,
 at your option, any later version of Python 2 you may have available.
 
-Lets help and support PSF.
+🌎 🌍 🌏 Lets help and support PSF.
 
-|Python Software Foundation|
+|python software foundation|
 
-.. |Python Software Foundation| image:: https://raw.githubusercontent.com/vroncevic/flask_func_struct_vue/dev/docs/psf-logo-alpha.png
+.. |python software foundation| image:: https://raw.githubusercontent.com/vroncevic/flask_func_struct_vue/dev/docs/psf-logo-alpha.png
    :target: https://www.python.org/psf/
 
-|Donate|
+|donate|
 
-.. |Donate| image:: https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif
+.. |donate| image:: https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif
    :target: https://psfmember.org/index.php?q=civicrm/contribute/transact&reset=1&id=2
 
 Indices and tables

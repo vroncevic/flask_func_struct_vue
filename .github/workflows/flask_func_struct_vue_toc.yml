@@ -1,8 +1,8 @@
-name: flask_func_struct_vue toc generator
+name: flask_func_struct_vue_toc
 on: push
 jobs:
   generateTOC:
-    name: flask_func_struct_vue toc generator
+    name: flask_func_struct_vue_toc
     runs-on: ubuntu-latest
     steps:
       - uses: technote-space/toc-generator@v2
