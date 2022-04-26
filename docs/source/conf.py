@@ -3,7 +3,7 @@
 project = u'flask_func_struct_vue'
 copyright = u'2022, Vladimir Roncevic <elektron.ronca@gmail.com>'
 author = u'Vladimir Roncevic <elektron.ronca@gmail.com>'
-version = u'1.3.0'
+version = u'1.4.0'
 release = u'https://github.com/vroncevic/flask_func_struct_vue/releases'
 extensions = []
 templates_path = ['_templates']

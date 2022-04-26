@@ -1,4 +1,4 @@
-name: flask_func_struct_vue py checker
+name: flask_func_struct_vue_python_checker
 on:
   push:
     branches: [ main ]

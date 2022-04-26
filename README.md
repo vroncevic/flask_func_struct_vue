@@ -10,7 +10,7 @@ The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-[![flask_func_struct_vue py checker](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_py_checker.yml/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_py_checker.yml) [![flask_func_struct_vue python package](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_package.yml/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_package.yml) [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/flask_func_struct_vue.svg)](https://github.com/vroncevic/flask_func_struct_vue/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/flask_func_struct_vue.svg)](https://github.com/vroncevic/flask_func_struct_vue/graphs/contributors)
+[![flask_func_struct_vue python checker](https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_python_checker?style=flat&label=flask_func_struct_vue%20python%20checker)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_python_checker.yml) [![flask_func_struct_vue package checker](https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_package_checker?style=flat&label=flask_func_struct_vue%20package%20checker)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_package_checker.yml) [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/flask_func_struct_vue.svg)](https://github.com/vroncevic/flask_func_struct_vue/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/flask_func_struct_vue.svg)](https://github.com/vroncevic/flask_func_struct_vue/graphs/contributors)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -27,9 +27,13 @@ other information that should be provided before the modules are installed.
 
 ### Installation
 
+Used next development environment
+
+![debian linux os](https://raw.githubusercontent.com/vroncevic/flask_func_struct_vue/dev/docs/debtux.png)
+
 Navigate to **[release page](https://github.com/vroncevic/flask_func_struct_vue/releases)** download and extract release archive 📦.
 
-To install modules type the following
+To install **flask_func_struct_vue** 📦 type the following
 
 ```bash
 tar xvzf flask_func_struct_vue-x.y.z.tar.gz
@@ -42,7 +46,7 @@ cp -R /app_server/ /Flask/
 
 Or You can use Dockerfile to create image/container 🚢.
 
-[![flask_func_struct_vue docker checker](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_docker_checker.yml/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_docker_checker.yml)
+[![flask_func_struct_vue docker checker](https://img.shields.io/github/workflow/status/vroncevic/flask_func_struct_vue/flask_func_struct_vue_docker_checker?style=flat&label=flask_func_struct_vue%20docker%20checker)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/flask_func_struct_vue_docker_checker.yml)
 
 ### Usage
 
@@ -203,7 +207,7 @@ app_server/
 
 ### Docs
 
-[![Documentation Status](https://readthedocs.org/projects/flask-func-struct-vue/badge/?version=latest)](https://flask-func-struct-vue.readthedocs.io/en/latest/?badge=latest) [![pages-build-deployment](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/vroncevic/flask_func_struct_vue/actions/workflows/pages/pages-build-deployment)
+[![Documentation Status](https://readthedocs.org/projects/flask-func-struct-vue/badge/?version=latest)](https://flask-func-struct-vue.readthedocs.io/en/latest/?badge=latest)
 
 📗 More documentation and info at
 
@@ -221,7 +225,7 @@ Copyright (C) 2017 by [vroncevic.github.io/flask_func_struct_vue](https://vronce
 it under the same terms as Python itself, either Python version 2.x/3.x or,
 at your option, any later version of Python 3 you may have available.
 
-Lets help and support PSF.
+🌎 🌍 🌏 Lets help and support PSF.
 
 [![Python Software Foundation](https://raw.githubusercontent.com/vroncevic/flask_func_struct_vue/dev/docs/psf-logo-alpha.png)](https://www.python.org/psf/)
 
